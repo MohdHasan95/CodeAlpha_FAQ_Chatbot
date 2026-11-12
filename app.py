@@ -43,7 +43,7 @@ if user_question:
     with st.chat_message("user"):
         st.markdown(user_question)
 
-    task_match = re.search(r"\\btask\\s*([1-4])\\b", user_question, flags=re.IGNORECASE)
+    task_match = re.search(r"\btask\s*([1-4])\b", user_question, flags=re.IGNORECASE)
     if task_match:
         task_number = int(task_match.group(1))
         answer = TASK_ANSWERS[task_number]
